@@ -1,10 +1,15 @@
-export default function (state = 0, actions) {
+import { INCREMENT, DECREMENT} from '../actions/types'
+
+const counter = (state = 0, actions) => {
     console.log(actions.type)
     switch (actions.type) {
-        case "INCREMENT":
+        case INCREMENT:
             return state + 1
-        case "DECREMENT":
+        case DECREMENT:
             return state - 1
+        default:
+            return state
     }
-
 }
+
+export default counter
