@@ -3,14 +3,14 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
 // import all reducer from reducer index
-import rootReducer from './reducers'
+import allReducer from './reducers'
 
 const middleware = [thunk]
 
 //STORE -> GLOBALIZED STATE
 
 let store = createStore(
-  rootReducer,
+  allReducer,
   composeWithDevTools(applyMiddleware(...middleware))
 )
 

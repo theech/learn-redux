@@ -1,14 +1,17 @@
 import {
-    IS_LOGIN
+    IS_LOGIN,
+    IS_LOGOUT
 } from '../actions/types'
 
-const loggedReducer = (state = false, action) => {
+const authReducer = (state = false, action) => {
     switch (action.type) {
         case IS_LOGIN:
-            return !state
+            return true
+        case IS_LOGOUT:
+            return false
         default: 
             return state
     }
 }
 
-export default loggedReducer
+export default authReducer 
